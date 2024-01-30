@@ -1,6 +1,6 @@
 Widgets in the form of light indicators of different shapes for your designs.
 
-![Light Round](../../../Pictures/round.png)
+![Light Round](C:\Users\jmxde\Pictures\round.png)
 
 
 ```dart
