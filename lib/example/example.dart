@@ -12,7 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   bool state = true;
 
   @override
@@ -23,17 +22,37 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Led Indicators'),
         ),
-        body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-          RoundLight(size: 80, state: state, color: Colors.red),
-          RoundLight(size: 80, state: !state, color: Colors.green),
-          SquareLight(size: 70, state: state, color: Colors.orange,stateText: true),
-          SquareLight(size: 70, state: !state, color: Colors.orange,stateText: true,),
-          TotalSquareLight(size: 60, state: state, color: Colors.blue),
-          TotalSquareLight(size: 60, state: !state, color: Colors.blue,stateText: true,textColor: Colors.red),
-        ],),
-        floatingActionButton: FloatingActionButton(onPressed: ()=>setState(() {state = !state;}),
-        child: const Icon(Icons.refresh),),
+            RoundLight(size: 80, state: state, color: Colors.red),
+            RoundLight(size: 80, state: !state, color: Colors.green),
+            SquareLight(
+                size: 70,
+                state: state,
+                color: Colors.lightBlueAccent,
+                stateText: true),
+            SquareLight(
+              size: 70,
+              state: !state,
+              color: Colors.lightBlueAccent,
+              stateText: true,
+            ),
+            TotalSquareLight(size: 60, state: state, color: Colors.purple),
+            TotalSquareLight(
+              size: 60,
+              state: !state,
+              color: Colors.purple,
+              stateText: true,
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => setState(() {
+            state = !state;
+          }),
+          child: const Icon(Icons.refresh),
+        ),
       ),
     );
   }

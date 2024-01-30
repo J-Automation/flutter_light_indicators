@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 
 ///draw a round light
+///
+/// [size] size of the indicator
+/// [state] current state on/off
+/// [stateText] if true shows the text
+/// [function] optional function
+/// [color] indicator color
+/// [textColor] text color
 class RoundLight extends StatelessWidget {
   const RoundLight(
-      {Key? key, required this.size, this.stateText = false, required this.state, this.function, required this.color, this.textColor=Colors.black})
+      {Key? key,
+      required this.size,
+      this.stateText = false,
+      required this.state,
+      this.function,
+      required this.color,
+      this.textColor = Colors.black})
       : super(key: key);
 
   final double size;
@@ -21,28 +34,38 @@ class RoundLight extends StatelessWidget {
         child: Container(
           width: size,
           height: size,
-          decoration: BoxDecoration(shape: BoxShape.circle,color: getLightColor(color)),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle, color: getLightColor(color)),
           child: Container(
             width: size,
             height: size,
-            decoration:
-            BoxDecoration(shape: BoxShape.circle, gradient:
-            (state) ? RadialGradient(colors: [
-              color.withOpacity(0.1),
-              getNewColor(color, -80),
-            ], stops: const [0.7,0.95])
-                :
-            RadialGradient(colors: [
-              getNewColor(color, -60),
-              getNewColor(color, -100),
-            ], stops: const [ 0.8, 0.9])
-            ),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: (state)
+                    ? RadialGradient(colors: [
+                        color.withOpacity(0.1),
+                        getNewColor(color, -80),
+                      ], stops: const [
+                        0.7,
+                        0.95
+                      ])
+                    : RadialGradient(colors: [
+                        getNewColor(color, -60),
+                        getNewColor(color, -100),
+                      ], stops: const [
+                        0.8,
+                        0.9
+                      ])),
             child: Center(
-                child: (stateText) ? Text((state) ? 'ON' : 'OFF',
-                  style: TextStyle(color: textColor,
-                      fontSize: (size / 5),
-                      fontWeight: FontWeight.bold),) : null
-            ),
+                child: (stateText)
+                    ? Text(
+                        (state) ? 'ON' : 'OFF',
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: (size / 5),
+                            fontWeight: FontWeight.bold),
+                      )
+                    : null),
           ),
         ),
       ),
@@ -51,9 +74,22 @@ class RoundLight extends StatelessWidget {
 }
 
 ///draw a square light with round light
+///
+/// [size] size of the indicator
+/// [state] current state on/off
+/// [stateText] if true shows the text
+/// [function] optional function
+/// [color] indicator color
+/// [textColor] text color
 class SquareLight extends StatelessWidget {
   const SquareLight(
-      {Key? key, required this.size, this.stateText = false, required this.state, this.function, required this.color, this.textColor=Colors.black})
+      {Key? key,
+      required this.size,
+      this.stateText = false,
+      required this.state,
+      this.function,
+      required this.color,
+      this.textColor = Colors.black})
       : super(key: key);
 
   final double size;
@@ -71,28 +107,39 @@ class SquareLight extends StatelessWidget {
         child: Container(
           width: size,
           height: size,
-          decoration: BoxDecoration(shape: BoxShape.circle,color: getLightColor(color)),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle, color: getLightColor(color)),
           child: Container(
             width: size,
             height: size,
-            decoration:
-            BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(size/10), gradient:
-            (state) ? RadialGradient(colors: [
-              color.withOpacity(0.1),
-              getNewColor(color, -80),
-            ], stops: const [0.8, 0.9])
-                :
-            RadialGradient(colors: [
-              getNewColor(color, -60),
-              getNewColor(color, -100),
-            ], stops: const [ 0.8, 0.9])
-            ),
+            decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(size / 10),
+                gradient: (state)
+                    ? RadialGradient(colors: [
+                        color.withOpacity(0.1),
+                        getNewColor(color, -80),
+                      ], stops: const [
+                        0.8,
+                        0.9
+                      ])
+                    : RadialGradient(colors: [
+                        getNewColor(color, -60),
+                        getNewColor(color, -100),
+                      ], stops: const [
+                        0.8,
+                        0.9
+                      ])),
             child: Center(
-                child: (stateText) ? Text((state) ? 'ON' : 'OFF',
-                  style: TextStyle(color: textColor,
-                      fontSize: (size / 5),
-                      fontWeight: FontWeight.bold),) : null
-            ),
+                child: (stateText)
+                    ? Text(
+                        (state) ? 'ON' : 'OFF',
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: (size / 5),
+                            fontWeight: FontWeight.bold),
+                      )
+                    : null),
           ),
         ),
       ),
@@ -101,9 +148,22 @@ class SquareLight extends StatelessWidget {
 }
 
 ///draw a square light
+///
+/// [size] size of the indicator
+/// [state] current state on/off
+/// [stateText] if true shows the text
+/// [function] optional function
+/// [color] indicator color
+/// [textColor] text color
 class TotalSquareLight extends StatelessWidget {
   const TotalSquareLight(
-      {Key? key, required this.size, this.stateText = false, required this.state, this.function, required this.color, this.textColor=Colors.black})
+      {Key? key,
+      required this.size,
+      this.stateText = false,
+      required this.state,
+      this.function,
+      required this.color,
+      this.textColor = Colors.black})
       : super(key: key);
 
   final double size;
@@ -121,35 +181,47 @@ class TotalSquareLight extends StatelessWidget {
         child: Container(
           width: size,
           height: size,
-          decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(size/10),color: getLightColor(color)),
+          decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(size / 10),
+              color: getLightColor(color)),
           child: Container(
             width: size,
             height: size,
-            decoration:
-            BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(size/10), gradient:
-            (state) ? RadialGradient(radius: 1.0,colors: [
-              color.withOpacity(0.1),
-              color.withOpacity(0.5),
-            ], stops: const [0.3, 0.5])
-                :
-            RadialGradient(radius: 1.0,colors: [
-              getNewColor(color, -70),
-              getNewColor(color, -110),
-            ], stops: const [0.3, 0.7])
-            ),
+            decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(size / 10),
+                gradient: (state)
+                    ? RadialGradient(radius: 1.0, colors: [
+                        color.withOpacity(0.1),
+                        color.withOpacity(0.5),
+                      ], stops: const [
+                        0.3,
+                        0.5
+                      ])
+                    : RadialGradient(radius: 1.0, colors: [
+                        getNewColor(color, -70),
+                        getNewColor(color, -110),
+                      ], stops: const [
+                        0.3,
+                        0.7
+                      ])),
             child: Center(
-                child: (stateText) ? Text((state) ? 'ON' : 'OFF',
-                  style: TextStyle(color: textColor,
-                      fontSize: (size / 5),
-                      fontWeight: FontWeight.bold),) : null
-            ),
+                child: (stateText)
+                    ? Text(
+                        (state) ? 'ON' : 'OFF',
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: (size / 5),
+                            fontWeight: FontWeight.bold),
+                      )
+                    : null),
           ),
         ),
       ),
     );
   }
 }
-
 
 Color getLightColor(Color color) {
   return Color.fromARGB(
