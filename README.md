@@ -1,6 +1,22 @@
 Widgets in the form of light indicators of different shapes for your designs.
 
-![Light Round](C:\Users\jmxde\Pictures\round.png)
+#Designs Available
+
+-Round Light
+-Square Light
+-Total Square Light
+
+
+#Round
+![Round Light](https://github.com/J-Automation/flutter_light_indicators/blob/main/round.png)
+
+
+#Square
+![Square Light](https://github.com/J-Automation/flutter_light_indicators/blob/main/square.png)
+
+
+#Total Square
+![Total Square Light](https://github.com/J-Automation/flutter_light_indicators/blob/main/t_square.png)
 
 
 ```dart
